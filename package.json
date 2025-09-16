@@ -1,35 +1,54 @@
 {
-  "name": "project",
+  "name": "jobsort",
   "version": "1.0.0",
+  "description": "Job tracking desktop app",
   "main": "main.js",
-  "scripts": {
-    "start": "electron .",
-    "dev": "parcel src/public/index.html",
-    "build": "parcel build src/public/index.html"
+"scripts": {
+  "start": "electron .",
+  "dev": "parcel src/public/index.html --dist-dir ./app --target app",
+  "build-parcel": "parcel build src/public/index.html --dist-dir ./app --target app",
+  "build": "npm run build-parcel && electron-builder"
   },
   "targets": {
-    "default": {
+    "app": {
+      "context": "browser",
+      "publicUrl": "./",
       "includeNodeModules": true
     }
   },
-  "devDependencies": {
-    "parcel": "^2.15.4"
-  },
   "dependencies": {
-    "electron": "^29.4.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
-  "description": "",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Doneux/JobSort.git"
+  "devDependencies": {
+    "electron": "^29.4.6",
+    "electron-builder": "^26.0.12",
+    "parcel": "^2.15.4"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Doneux/JobSort/issues"
-  },
-  "homepage": "https://github.com/Doneux/JobSort#readme"
+  "build": {
+    "appId": "electron-jobsort-app",
+    "productName": "JobSort",
+    "files": [
+      "app/**/*",
+      "main.js",
+      "preload.js",
+      "src/logic/**/*",
+      "src/data/icon.png"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "src/data/icon.png"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "src/data/icon.png"
+    },
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "icon": "src/data/icon.png"
+    }
+  }
 }

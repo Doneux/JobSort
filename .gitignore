@@ -37,3 +37,4 @@ yarn-error.log*
 #Parcel
 .parcel-cache/
 *.mdb
+app/*

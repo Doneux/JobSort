@@ -14,7 +14,7 @@ function createWindow() {
     },
   });
 
-  win.loadURL("http://localhost:1234"); // Parcel dev server
+  win.loadFile(path.join(__dirname, "app/index.html"))
 }
 
 app.whenReady().then(createWindow);
