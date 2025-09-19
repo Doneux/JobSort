@@ -1,5 +1,5 @@
 {
-  "name": "jobsort",
+  "name": "JobSort",
   "version": "1.0.0",
   "description": "Job tracking desktop app",
   "main": "main.js",
@@ -33,22 +33,22 @@
       "main.js",
       "preload.js",
       "src/logic/**/*",
-      "src/data/icon.png"
+      "src/data/icon.ico"
     ],
     "directories": {
       "output": "dist"
     },
     "win": {
       "target": "nsis",
-      "icon": "src/data/icon.png"
+      "icon": "src/data/icon.ico"
     },
     "mac": {
       "target": "dmg",
-      "icon": "src/data/icon.png"
+      "icon": "src/data/icon.ico"
     },
     "linux": {
       "target": ["AppImage", "deb"],
-      "icon": "src/data/icon.png"
+      "icon": "src/data/icon.ico"
     }
   }
 }

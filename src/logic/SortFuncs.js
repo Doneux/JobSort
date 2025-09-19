@@ -44,19 +44,19 @@ export function jobfilter(jobs, by, key) {
     //NOTE: keep a backup of current jobs array when filter is removed
 
     if (by === "title") {
-        return jobs.filter(job => job.title.toLowerCase() === key.toLowerCase());
+    return jobs.filter(job => job.title.toLowerCase().includes(key.toLowerCase()));
     }
 
     if (by === "company") {
-        return jobs.filter(job => job.company.toLowerCase() === key.toLowerCase());
+    return jobs.filter(job => job.company.toLowerCase().includes(key.toLowerCase()));
     }
 
     if (by === "salary") {
-        return jobs.filter(job => job.salary === Number(key));
+    return jobs.filter(job => Number(job.pay) === Number(key));
     }
 
     if (by === "status") {
-        return jobs.filter(job => job.status === key.toLowerCase());
+    return jobs.filter(job => job.status.toLowerCase() === key.toLowerCase());
     }
 
     if (by === "skills") {

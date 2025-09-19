@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require("electron");
+const { app, BrowserWindow, ipcMain, Menu } = require("electron");
 const path = require("path");
 
 const { loadJobsFromFile, saveJobsToFile } = require("./src/logic/FileFuncs.js");
@@ -15,6 +15,8 @@ function createWindow() {
   });
 
   win.loadFile(path.join(__dirname, "app/index.html"))
+
+  Menu.setApplicationMenu(null);
 }
 
 app.whenReady().then(createWindow);

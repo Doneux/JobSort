@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Job A",
+    "company": "Company A",
+    "location": "Somewhere",
+    "pay": 1000,
+    "listingDate": null,
+    "skills": [
+      "skill1",
+      "skill2"
+    ],
+    "status": "applied",
+    "interviewDate": null,
+    "appliedOn": null
+  },
+  {
+    "title": "Job B",
+    "company": "Company B",
+    "location": "Somewhere else",
+    "pay": 2000,
+    "listingDate": null,
+    "skills": [
+      "skill2",
+      "skill3"
+    ],
+    "status": "accepted",
+    "interviewDate": null,
+    "appliedOn": null
+  }
+]

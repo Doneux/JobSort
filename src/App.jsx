@@ -67,7 +67,7 @@ export default function App() {
     location: "",
     pay: "",
     skills: "",
-    status: "",
+    status: "applied",
     listingDate: "",
     appliedOn: "",
   });
@@ -91,7 +91,7 @@ export default function App() {
     setJobs(updated);
     setIntJobs(updated);
     window.api.saveJobs(updated);
-    setForm({ title: "", company: "", location: "", pay: "", skills: "", status: "", listingDate: "", appliedOn: "" });
+    setForm({ title: "", company: "", location: "", pay: "", skills: "", status: "applied", listingDate: "", appliedOn: "" });
     setShowForm(false);
   };
 
@@ -123,6 +123,7 @@ export default function App() {
   const deleteJob = (index) => {
     const newJobs = jobs.filter((_, i) => i !== index);
     setJobs(newJobs);
+    setIntJobs(newJobs);
     window.api.saveJobs(newJobs); // persist change
   };
 
@@ -173,8 +174,9 @@ export default function App() {
         <option value="company">Company</option>
         <option value="salary">Salary</option>
         <option value="status">Status</option>
+        <option value="skills">Skills</option>
       </select>
-      <button onClick={() => setJobs(jobfilter(jobs, filter, key))}>Filter</button>
+      <button onClick={() => setJobs(jobfilter(intJobs, filter, key))}>Filter</button>
 
       <button style={{ marginLeft: "8px" }} onClick={() => setJobs(intJobs)}>Clear</button>
       

@@ -3,7 +3,9 @@ const path = require("path");
 const { app } = require("electron");
 const { Job } = require("./Job");
 
-//either parcel or node really doesn't get filepaths, use of __dirname fixes that
+//build will use the userdata feature in Electron
+//if running unit tests, comment out the userdata line and use data folder
+//const JOBS_FILE = path.join(__dirname, "../data/test_jobs.json");
 const JOBS_FILE = path.join(app.getPath("userData"), "jobs.json");
 
 // Save jobs to jobs.json

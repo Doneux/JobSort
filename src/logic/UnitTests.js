@@ -83,4 +83,32 @@ if (testjobs3[0].title === "Job B") {
     console.log("Sort by status failed!");
 }
 
-//TODO: implement dates and sort them
+//filter array by title
+let testjobs4 = jobfilter(testjobs, "title", "job b")
+
+//assert job B is first, i.e. job A DNE
+if (testjobs4[0].title === "Job B") {
+    console.log("Filtered by title successfully");
+} else {
+    console.log("Filter by title failed!");
+}
+
+//filter array by company
+let testjobs5 = jobfilter(testjobs, "company", "company b")
+
+//assert job B is first, i.e. job A DNE
+if (testjobs5[0].title === "Job B") {
+    console.log("Filtered by company successfully");
+} else {
+    console.log("Filter by company failed!");
+}
+
+//filter array by salary
+let testjobs6 = jobfilter(testjobs, "salary", "2000")
+
+//assert job B is first, i.e. job A DNE
+if (testjobs6[0].title === "Job B") {
+    console.log("Filtered by salary successfully");
+} else {
+    console.log("Filter by salary failed!");
+}
